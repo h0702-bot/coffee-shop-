@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Goûter Coffee Shop &amp; Pâtisserie à Jijel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&amp;family=Amiri:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;family=Cairo:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120D0A;--panel:rgba(25,18,15,.85);--cream:#F5EFE6;--parch:#FAF6F0;--ink:#2A1D17;--terra:#8B3A1C;--gold:#C89D54;--line:rgba(200,157,84,.22);
+--hd:'Cormorant Garamond','Playfair Display',Georgia,serif;--bd:'Plus Jakarta Sans',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+html[lang=ar]{--hd:'Amiri',serif;--bd:'Cairo',sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--cream);font:400 16px/1.65 var(--bd);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--hd);font-weight:700;line-height:1.1}
+section{padding:84px 20px;max-width:1080px;margin:auto}
+h2{font-size:clamp(32px,6vw,52px);margin-bottom:28px}
+header{position:sticky;top:0;z-index:20;background:rgba(18,13,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px}
+.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;max-width:1080px;margin:auto}
+.logo{font:700 24px var(--hd);margin-inline-end:auto;color:var(--gold)}
+.badge{display:flex;align-items:center;gap:8px;font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:99px}
+.dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;animation:pulse 1.8s infinite}
+.closed .dot{background:#d9534f;animation:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}100%{box-shadow:0 0 0 10px transparent}}
+.lang button{background:none;border:0;color:var(--cream);opacity:.55;font:600 14px var(--bd);padding:6px 8px;cursor:pointer}
+.lang button[aria-pressed=true]{opacity:1;color:var(--gold)}
+.btn{display:inline-block;padding:12px 24px;border-radius:99px;font-weight:600;font-size:15px;border:1px solid var(--gold);cursor:pointer;transition:transform .25s,background .25s}
+.btn:hover{transform:translateY(-3px)}
+.p{background:var(--terra);border-color:var(--terra);color:var(--cream)}
+.s{background:transparent;color:var(--gold)}
+.sm{padding:8px 16px;font-size:14px}
+.hero{position:relative;min-height:88vh;display:grid;align-content:center;padding:80px 20px;max-width:none;overflow:hidden;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(200,157,84,.28),transparent 70%)}
+.hero>div{max-width:1080px;margin:auto;width:100%;position:relative;z-index:2}
+.hero h1{font-size:clamp(44px,10vw,104px);max-width:12em;margin-bottom:22px}
+.hero p{max-width:34em;opacity:.85;margin-bottom:32px;font-size:18px}
+.hero .btn+.btn{margin-inline-start:10px}
+.steam{position:absolute;bottom:-40px;width:120px;height:320px;border-radius:50%;background:radial-gradient(closest-side,rgba(245,239,230,.22),transparent);filter:blur(22px);opacity:0;animation:rise 7s infinite ease-in}
+@keyframes rise{0%{transform:translateY(0) scaleX(1);opacity:0}25%{opacity:.8}100%{transform:translateY(-420px) translateX(40px) scaleX(1.8);opacity:0}}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
+.tabs button{flex:none;background:none;color:var(--cream);border:1px solid var(--line);border-radius:99px;padding:8px 18px;font:600 14px var(--bd);cursor:pointer;transition:.25s}
+.tabs button[aria-pressed=true]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+#q{width:100%;margin:16px 0 28px;padding:14px 20px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--cream);font:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.item{background:var(--parch);color:var(--ink);padding:18px 20px;border-radius:14px;display:flex;flex-direction:column;gap:2px;transition:transform .35s,box-shadow .35s;animation:in .4s both}
+.item:hover{transform:translateY(-8px);box-shadow:0 18px 30px rgba(0,0,0,.45),0 0 0 1px var(--gold)}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.item small{color:var(--terra);font-weight:600;font-size:12px;min-height:18px}
+.item b{font:700 22px var(--hd)}
+.item span{color:var(--terra);font-weight:600}
+.note,.empty{margin-top:18px;opacity:.7;font-size:14px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.tile{aspect-ratio:4/5;border-radius:16px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;border:1px solid var(--line);position:relative;overflow:hidden;background:var(--panel)}
+.tile i{font-style:normal;font-size:56px;position:absolute;top:18px;inset-inline-start:20px}
+.tile:nth-child(1){background:linear-gradient(160deg,#3a1d10,#120D0A)}
+.tile:nth-child(2){background:linear-gradient(160deg,#5c3a1c,#1a1412)}
+.tile:nth-child(3){background:linear-gradient(160deg,#2a1d17,#8B3A1C)}
+.tile:nth-child(4){background:linear-gradient(160deg,#1a1412,#6d5428)}
+.tile h3{font-size:26px}
+.ig{margin-top:40px;padding:32px;border:1px solid var(--line);border-radius:18px;background:var(--panel);display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.ig strong{font:700 56px var(--hd);color:var(--gold);line-height:1}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.map{background:radial-gradient(circle at 50% 45%,rgba(139,58,28,.55),transparent 60%),repeating-linear-gradient(45deg,rgba(200,157,84,.08) 0 2px,transparent 2px 26px),var(--panel);justify-content:center;min-height:260px}
+.pin{font-size:44px}
+footer{text-align:center;padding:30px 20px 50px;opacity:.55;font-size:13px;border-top:1px solid var(--line)}
+@media(max-width:560px){.hero .btn{display:block;text-align:center;margin:0 0 12px!important}.badge{order:5}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}.steam{display:none}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#top">Le Goûter</a>
+<div class="badge" id="badge"><span class="dot"></span><span id="bt"></span></div>
+<div class="lang" role="group" aria-label="Language">
+<button data-l="ar">AR</button><button data-l="fr">FR</button><button data-l="en">EN</button></div>
+<a class="btn p sm" href="tel:0655824529" data-i="call"></a>
+</div></header>
+
+<main id="top">
+<div class="hero"><i class="steam" style="inset-inline-start:58%;animation-delay:0s"></i><i class="steam" style="inset-inline-start:66%;animation-delay:2.4s;width:90px"></i><i class="steam" style="inset-inline-start:74%;animation-delay:4.6s"></i>
+<div>
+<h1 data-i="h1"></h1>
+<p data-i="sub"></p>
+<a class="btn p" href="#menu" data-i="cta1"></a>
+<a class="btn s" href="https://maps.app.goo.gl/8JkhG2TeFHaxtRob6" target="_blank" rel="noopener" data-i="cta2"></a>
+</div></div>
+
+<section id="menu">
+<h2 data-i="menu"></h2>
+<div class="tabs" id="tabs" role="group"></div>
+<input id="q" type="search" data-p="search" aria-label="Search">
+<div class="grid" id="grid"></div>
+<p class="note" data-i="syrup"></p>
+</section>
+
+<section id="ambiance">
+<h2 data-i="amb"></h2>
+<div class="gal">
+<div class="tile"><i>🏠</i><h3 data-i="g1"></h3></div>
+<div class="tile"><i>☕</i><h3 data-i="g2"></h3></div>
+<div class="tile"><i>🛋️</i><h3 data-i="g3"></h3></div>
+<div class="tile"><i>🥐</i><h3 data-i="g4"></h3></div>
+</div>
+<div class="ig"><div><strong>26.9K+</strong><p data-i="ig"></p></div>
+<a class="btn s" href="https://www.instagram.com/le_gouter_coffeeshop" target="_blank" rel="noopener">@le_gouter_coffeeshop</a></div>
+</section>
+
+<section id="contact">
+<h2 data-i="find"></h2>
+<div class="contact">
+<div class="card">
+<p>📍 Ben Achour, Rue Zaimen Athmane, Jijel 18000</p>
+<p>🕙 <span data-i="hours"></span></p>
+<a class="btn p" href="tel:0655824529" dir="ltr">0655 82 45 29</a>
+<a class="btn p" href="tel:0776114052" dir="ltr">0776 11 40 52</a>
+</div>
+<a class="card map" href="https://maps.app.goo.gl/8JkhG2TeFHaxtRob6" target="_blank" rel="noopener" aria-label="Google Maps">
+<span class="pin">📍</span><h3>Le Goûter Coffee Shop</h3><span class="btn s" data-i="cta2"></span></a>
+</div>
+</section>
+</main>
+<footer>© Le Goûter Coffee Shop · Jijel · pâtisserie · viennoiserie · tradition</footer>
+
+<script>
+const T={
+fr:{h1:"L’endroit idéal pour un goûter gourmand",sub:"Café de spécialité, viennoiseries fraîches, desserts gourmands et traditions algériennes à Jijel.",cta1:"Voir le menu",cta2:"Itinéraire",call:"Appeler",menu:"Le menu",search:"Rechercher une boisson ou un dessert…",syrup:"Sirop Caramel, Vanille, Noisette ou Pistache : +50 DA sur les boissons chaudes.",amb:"L’ambiance",g1:"La façade",g2:"Latte art",g3:"Coins cosy",g4:"Pâtisseries",ig:"amoureux du café sur Instagram",find:"Nous trouver",hours:"Tous les jours, 10h – 22h",open:"Ouvert · 10h – 22h",closed:"Fermé · ouvre à 10h",none:"Aucun résultat.",cur:"DA",
+c:{all:"Tout",hot:"Boissons chaudes",cold:"Boissons froides",tea:"Thé & infusions",trad:"Douceurs traditionnelles",crepes:"Crêpes, gaufres, pancakes",dessert:"Desserts",juice:"Jus & smoothies",mojito:"Mojitos & mocktails"},title:"Le Goûter - Coffee Shop & Pâtisserie à Jijel"},
+en:{h1:"The ideal place for a gourmet break",sub:"Specialty coffee, fresh viennoiseries, gourmet desserts and Algerian traditions in Jijel.",cta1:"View interactive menu",cta2:"Get directions",call:"Call us",menu:"The menu",search:"Search a drink or dessert…",syrup:"Caramel, Vanilla, Hazelnut or Pistachio syrup: +50 DA on hot drinks.",amb:"The ambiance",g1:"The storefront",g2:"Coffee art",g3:"Cozy seating",g4:"Fresh pastries",ig:"coffee lovers on Instagram",find:"Find us",hours:"Daily, 10:00 AM – 10:00 PM",open:"Open now · 10:00 AM - 10:00 PM",closed:"Closed · opens 10:00 AM",none:"No results.",cur:"DA",
+c:{all:"All",hot:"Hot drinks",cold:"Cold drinks",tea:"Tea & infusions",trad:"Traditional sweets",crepes:"Crêpes, waffles, pancakes",dessert:"Desserts",juice:"Juices & smoothies",mojito:"Mojitos & mocktails"},title:"Le Goûter - Premium Coffee Shop & Bakery in Jijel"},
+ar:{h1:"المكان المثالي لاستراحة لذيذة وفاخرة",sub:"قهوة مختصة، فيينواز طازجة، حلويات فاخرة وتقاليد جزائرية في جيجل.",cta1:"استعرض القائمة",cta2:"الموقع على الخريطة",call:"اتصل بنا",menu:"القائمة",search:"ابحث عن مشروب أو حلوى…",syrup:"شراب كراميل أو فانيلا أو بندق أو فستق: +50 دج على المشروبات الساخنة.",amb:"الأجواء",g1:"واجهة المقهى",g2:"فن القهوة",g3:"جلسات دافئة",g4:"معجنات طازجة",ig:"من محبي القهوة على إنستغرام",find:"موقعنا",hours:"يوميًا، من 10:00 صباحًا إلى 10:00 مساءً",open:"مفتوح الآن · 10:00 - 22:00",closed:"مغلق · نفتح عند 10:00",none:"لا توجد نتائج.",cur:"دج",
+c:{all:"الكل",hot:"مشروبات ساخنة",cold:"مشروبات باردة",tea:"شاي وأعشاب",trad:"حلويات تقليدية",crepes:"كريب ووافل وبانكيك",dessert:"حلويات",juice:"عصائر وسموذي",mojito:"موهيتو وموكتيل"},title:"لو غوتي - مقهى وحلويات فخمة في جيجل"}};
+const D=`hot||Espresso|50
+hot||Capsule caps|100
+hot||Capsule for Lait|150
+hot||Café au lait|60
+hot||Americano|80
+hot||Cappucino|150
+hot||Latte|250
+hot||Macchiato|250
+hot||Mocha latte|300
+hot||Matcha latte|400
+cold||Iced americano|200
+cold||Iced latte|300
+cold||Iced spanish latte|350
+cold||Iced mocha|350
+cold||Iced oreo latte|400
+cold||Dalgona|450
+cold||Iced matcha|450
+tea||Thé maison|50
+tea||Tisane|60
+tea||Thé infusion|100
+tea||Iced tea|250
+trad||Baghrir|160
+trad||Mtawi|150
+trad||Mtawi special|180
+trad||Ftir|100
+trad||Mlawi|90
+trad||La galette|60
+trad||Zrir|350
+crepes|Brownies|Simple|200
+crepes|Brownies|Le goûter|450
+crepes|Pancakes|Miel|250
+crepes|Pancakes|Chocolat|300
+crepes|Pancakes|Le goûter|450
+crepes|Gaufres|Chocolat|350
+crepes|Gaufres|Le goûter|450
+crepes|Crêpes|Chocolat|300
+crepes|Crêpes|Un fruit|350
+crepes|Crêpes|Deux fruits|400
+crepes|Crêpes|Le goûter|500
+dessert||Choco meringue|150
+dessert||Tiramissu|200
+dessert||Red velvet|350
+dessert||Cheesecake|400
+juice|Jus|Orange|250
+juice|Jus|Citron|250
+juice|Jus|Banane|350
+juice|Jus|Chocolat|350
+juice|Smoothies|Banane|300
+juice|Smoothies|Fraise|350
+juice|Smoothies|Dates|400
+juice|Smoothies|Peach|450
+mojito|Mojito|Classique|250
+mojito|Mojito|Fraise · Blue · Framboise · Cassis · Kiwi|300 – 350
+mojito|Mojito|Pinacolada|450
+mojito|Milkshakes|Chocolat · Fraise|300
+mojito|Milkshakes|Banane · Oreo|350
+mojito|Milkshakes|Chocolat banane|400
+mojito|Milkshakes|Fraise banane|450
+mojito|Milkshakes|Hot chocolate|300
+mojito|Frappuchino|Chocolat · Caramel|300
+mojito|Frappuchino|Lotus · Oreo|350
+mojito|Frappuchino|Pistache|400`.split("\n").map(r=>r.split("|"));
+let L=localStorage.getItem?null:null,cat="all";
+try{L=localStorage.getItem("lg-lang")}catch(e){}
+L=T[L]?L:"fr";
+const $=s=>document.querySelector(s);
+function isOpen(){const h=+new Intl.DateTimeFormat("en-GB",{hour:"numeric",hour12:false,timeZone:"Africa/Algiers"}).format(new Date());return h>=10&&h<22}
+function draw(){
+const t=T[L],q=$("#q").value.trim().toLowerCase();
+const rows=D.filter(r=>(cat=="all"||r[0]==cat)&&(r[1]+" "+r[2]).toLowerCase().includes(q));
+$("#grid").innerHTML=rows.map((r,i)=>`<div class="item" style="animation-delay:${Math.min(i,12)*30}ms"><small>${r[1]}</small><b>${r[2]}</b><span>${r[3]} ${t.cur}</span></div>`).join("")||`<p class="empty">${t.none}</p>`;
+}
+function tabs(){$("#tabs").innerHTML=Object.entries(T[L].c).map(([k,v])=>`<button data-c="${k}" aria-pressed="${k==cat}">${v}</button>`).join("")}
+function apply(){
+const t=T[L],h=document.documentElement;
+h.lang=L;h.dir=L=="ar"?"rtl":"ltr";document.title=t.title;
+document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t[e.dataset.i]);
+document.querySelectorAll("[data-p]").forEach(e=>e.placeholder=t[e.dataset.p]);
+document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l==L));
+const o=isOpen();$("#badge").classList.toggle("closed",!o);$("#bt").textContent=o?t.open:t.closed;
+tabs();draw();
+}
+document.addEventListener("click",e=>{
+const l=e.target.closest("[data-l]"),c=e.target.closest("[data-c]");
+if(l){L=l.dataset.l;try{localStorage.setItem("lg-lang",L)}catch(x){}apply()}
+if(c){cat=c.dataset.c;tabs();draw()}
+});
+$("#q").addEventListener("input",draw);
+apply();
+</script>
+</body>
+</html>
